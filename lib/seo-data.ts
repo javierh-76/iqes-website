@@ -1,0 +1,267 @@
+// SEO Data for landing pages
+
+export const cities = [
+  { 
+    slug: 'jacksonville', 
+    name: 'Jacksonville', 
+    nameEs: 'Jacksonville',
+    region: 'North Florida',
+    regionEs: 'Norte de Florida',
+    description: 'Northeast Florida\'s largest city and economic hub',
+    descriptionEs: 'La ciudad más grande del noreste de Florida y centro económico',
+    coordinates: { lat: 30.3322, lng: -81.6557 },
+    zipCodes: ['32099', '32202', '32204', '32207', '32210', '32216', '32224', '32246'],
+    population: '950,000+',
+    keyIndustries: ['Logistics', 'Finance', 'Healthcare', 'Manufacturing'],
+    keyIndustriesEs: ['Logística', 'Finanzas', 'Salud', 'Manufactura'],
+  },
+  { 
+    slug: 'orlando', 
+    name: 'Orlando', 
+    nameEs: 'Orlando',
+    region: 'Central Florida',
+    regionEs: 'Florida Central',
+    description: 'Tourism and technology hub of Central Florida',
+    descriptionEs: 'Centro de turismo y tecnología de Florida Central',
+    coordinates: { lat: 28.5383, lng: -81.3792 },
+    zipCodes: ['32801', '32803', '32804', '32806', '32819', '32821', '32827', '32837'],
+    population: '310,000+',
+    keyIndustries: ['Tourism', 'Technology', 'Aerospace', 'Entertainment'],
+    keyIndustriesEs: ['Turismo', 'Tecnología', 'Aeroespacial', 'Entretenimiento'],
+  },
+  { 
+    slug: 'tampa', 
+    name: 'Tampa', 
+    nameEs: 'Tampa',
+    region: 'Tampa Bay Area',
+    regionEs: 'Área de la Bahía de Tampa',
+    description: 'Major port city and business center on Florida\'s Gulf Coast',
+    descriptionEs: 'Ciudad portuaria principal y centro de negocios en la costa del Golfo',
+    coordinates: { lat: 27.9506, lng: -82.4572 },
+    zipCodes: ['33601', '33602', '33603', '33606', '33607', '33609', '33610', '33612'],
+    population: '400,000+',
+    keyIndustries: ['Finance', 'Healthcare', 'Technology', 'Shipping'],
+    keyIndustriesEs: ['Finanzas', 'Salud', 'Tecnología', 'Transporte marítimo'],
+  },
+  { 
+    slug: 'tallahassee', 
+    name: 'Tallahassee', 
+    nameEs: 'Tallahassee',
+    region: 'North Florida / Panhandle',
+    regionEs: 'Norte de Florida / Panhandle',
+    description: 'Florida State Capital with government and university infrastructure',
+    descriptionEs: 'Capital del estado de Florida con infraestructura gubernamental y universitaria',
+    coordinates: { lat: 30.4383, lng: -84.2807 },
+    zipCodes: ['32301', '32303', '32304', '32305', '32308', '32309', '32310', '32311'],
+    population: '200,000+',
+    keyIndustries: ['Government', 'Education', 'Healthcare', 'Technology'],
+    keyIndustriesEs: ['Gobierno', 'Educación', 'Salud', 'Tecnología'],
+  },
+  { 
+    slug: 'fort-myers', 
+    name: 'Fort Myers', 
+    nameEs: 'Fort Myers',
+    region: 'Southwest Florida',
+    regionEs: 'Suroeste de Florida',
+    description: 'Growing commercial center in Southwest Florida',
+    descriptionEs: 'Centro comercial en crecimiento en el suroeste de Florida',
+    coordinates: { lat: 26.6406, lng: -81.8723 },
+    zipCodes: ['33901', '33903', '33905', '33907', '33908', '33912', '33916', '33919'],
+    population: '95,000+',
+    keyIndustries: ['Real Estate', 'Healthcare', 'Tourism', 'Retail'],
+    keyIndustriesEs: ['Bienes Raíces', 'Salud', 'Turismo', 'Comercio'],
+  },
+  { 
+    slug: 'miami', 
+    name: 'Miami', 
+    nameEs: 'Miami',
+    region: 'South Florida',
+    regionEs: 'Sur de Florida',
+    description: 'International business gateway and cultural capital',
+    descriptionEs: 'Puerta de entrada de negocios internacionales y capital cultural',
+    coordinates: { lat: 25.7617, lng: -80.1918 },
+    zipCodes: ['33101', '33125', '33126', '33127', '33128', '33129', '33130', '33131', '33132', '33133'],
+    population: '470,000+',
+    keyIndustries: ['International Trade', 'Finance', 'Tourism', 'Real Estate'],
+    keyIndustriesEs: ['Comercio Internacional', 'Finanzas', 'Turismo', 'Bienes Raíces'],
+  },
+  { 
+    slug: 'west-palm-beach', 
+    name: 'West Palm Beach', 
+    nameEs: 'West Palm Beach',
+    region: 'Palm Beach County',
+    regionEs: 'Condado de Palm Beach',
+    description: 'Affluent business district in Palm Beach County',
+    descriptionEs: 'Distrito de negocios próspero en el Condado de Palm Beach',
+    coordinates: { lat: 26.7153, lng: -80.0534 },
+    zipCodes: ['33401', '33402', '33403', '33404', '33405', '33406', '33407', '33409'],
+    population: '120,000+',
+    keyIndustries: ['Finance', 'Healthcare', 'Technology', 'Professional Services'],
+    keyIndustriesEs: ['Finanzas', 'Salud', 'Tecnología', 'Servicios Profesionales'],
+  },
+];
+
+export const services = [
+  {
+    slug: 'fiber-optic',
+    name: 'Fiber Optic Installation',
+    nameEs: 'Instalación de Fibra Óptica',
+    shortName: 'Fiber Optic',
+    shortNameEs: 'Fibra Óptica',
+    icon: '🔌',
+    description: 'Professional fiber optic installation, splicing, and testing services for high-speed data infrastructure.',
+    descriptionEs: 'Servicios profesionales de instalación, empalme y pruebas de fibra óptica para infraestructura de datos de alta velocidad.',
+    benefits: [
+      'Lightning-fast data transfer speeds up to 100Gbps',
+      'Minimal signal loss over long distances',
+      'Future-proof infrastructure investment',
+      'Expert fusion splicing and OTDR testing',
+      'Single-mode and multi-mode fiber options',
+    ],
+    benefitsEs: [
+      'Velocidades de transferencia ultrarrápidas hasta 100Gbps',
+      'Pérdida mínima de señal en largas distancias',
+      'Inversión en infraestructura a prueba de futuro',
+      'Empalme por fusión experto y pruebas OTDR',
+      'Opciones de fibra monomodo y multimodo',
+    ],
+    applications: ['Data Centers', 'Corporate Networks', 'Campus Connectivity', 'Telecom Infrastructure', 'Healthcare Facilities'],
+    applicationsEs: ['Centros de Datos', 'Redes Corporativas', 'Conectividad de Campus', 'Infraestructura de Telecomunicaciones', 'Instalaciones de Salud'],
+    keywords: ['fiber optic installation', 'fiber splicing', 'OTDR testing', 'fiber optic contractor', 'fiber network'],
+  },
+  {
+    slug: 'cctv-security',
+    name: 'CCTV Security Systems',
+    nameEs: 'Sistemas de Seguridad CCTV',
+    shortName: 'CCTV',
+    shortNameEs: 'CCTV',
+    icon: '📹',
+    description: 'Advanced surveillance and security camera systems with remote monitoring, analytics, and cloud storage.',
+    descriptionEs: 'Sistemas avanzados de vigilancia y cámaras de seguridad con monitoreo remoto, análisis y almacenamiento en la nube.',
+    benefits: [
+      '24/7 surveillance and monitoring',
+      '4K Ultra HD video quality',
+      'Remote access via mobile app',
+      'AI-powered motion detection and analytics',
+      'Cloud and local storage options',
+    ],
+    benefitsEs: [
+      'Vigilancia y monitoreo 24/7',
+      'Calidad de video 4K Ultra HD',
+      'Acceso remoto mediante aplicación móvil',
+      'Detección de movimiento e análisis con IA',
+      'Opciones de almacenamiento en nube y local',
+    ],
+    applications: ['Commercial Buildings', 'Retail Stores', 'Warehouses', 'Parking Facilities', 'Construction Sites'],
+    applicationsEs: ['Edificios Comerciales', 'Tiendas Minoristas', 'Almacenes', 'Estacionamientos', 'Sitios de Construcción'],
+    keywords: ['CCTV installation', 'security cameras', 'video surveillance', 'security system', 'IP cameras'],
+  },
+  {
+    slug: 'structured-cabling',
+    name: 'Structured Cabling',
+    nameEs: 'Cableado Estructurado',
+    shortName: 'Cabling',
+    shortNameEs: 'Cableado',
+    icon: '🔗',
+    description: 'Professional structured cabling solutions for reliable, organized, and scalable network infrastructure.',
+    descriptionEs: 'Soluciones profesionales de cableado estructurado para infraestructura de red confiable, organizada y escalable.',
+    benefits: [
+      'Organized and labeled infrastructure',
+      'Easy maintenance and troubleshooting',
+      'Scalable design for future growth',
+      'TIA/EIA standards compliance',
+      'Cat6/Cat6A/Cat7 certified installations',
+    ],
+    benefitsEs: [
+      'Infraestructura organizada y etiquetada',
+      'Fácil mantenimiento y resolución de problemas',
+      'Diseño escalable para crecimiento futuro',
+      'Cumplimiento de estándares TIA/EIA',
+      'Instalaciones certificadas Cat6/Cat6A/Cat7',
+    ],
+    applications: ['Office Buildings', 'Data Centers', 'Educational Facilities', 'Healthcare', 'Industrial Sites'],
+    applicationsEs: ['Edificios de Oficinas', 'Centros de Datos', 'Instalaciones Educativas', 'Salud', 'Sitios Industriales'],
+    keywords: ['structured cabling', 'network cabling', 'Cat6 installation', 'data cabling', 'cable management'],
+  },
+  {
+    slug: 'access-control',
+    name: 'Access Control Systems',
+    nameEs: 'Sistemas de Control de Acceso',
+    shortName: 'Access Control',
+    shortNameEs: 'Control de Acceso',
+    icon: '🔐',
+    description: 'Secure access control systems including card readers, biometrics, and integrated security solutions.',
+    descriptionEs: 'Sistemas seguros de control de acceso incluyendo lectores de tarjetas, biométricos y soluciones de seguridad integradas.',
+    benefits: [
+      'Enhanced facility security',
+      'Detailed access logs and user tracking',
+      'Integration with CCTV and alarms',
+      'Mobile credential support',
+      'Multi-location management',
+    ],
+    benefitsEs: [
+      'Seguridad mejorada de las instalaciones',
+      'Registros detallados de acceso y seguimiento de usuarios',
+      'Integración con CCTV y alarmas',
+      'Soporte de credenciales móviles',
+      'Gestión de múltiples ubicaciones',
+    ],
+    applications: ['Corporate Offices', 'Government Facilities', 'Multi-tenant Buildings', 'Schools', 'Healthcare'],
+    applicationsEs: ['Oficinas Corporativas', 'Instalaciones Gubernamentales', 'Edificios Multi-inquilino', 'Escuelas', 'Salud'],
+    keywords: ['access control', 'card reader', 'keycard system', 'biometric access', 'door access'],
+  },
+  {
+    slug: 'networking',
+    name: 'Network Infrastructure',
+    nameEs: 'Infraestructura de Red',
+    shortName: 'Networking',
+    shortNameEs: 'Redes',
+    icon: '🌐',
+    description: 'Complete network infrastructure solutions including switches, routers, WiFi, and server room setup.',
+    descriptionEs: 'Soluciones completas de infraestructura de red incluyendo switches, routers, WiFi y configuración de sala de servidores.',
+    benefits: [
+      'Reliable high-speed connectivity',
+      'Enterprise-grade WiFi coverage',
+      'Network security implementation',
+      'VLAN and QoS configuration',
+      '24/7 network monitoring options',
+    ],
+    benefitsEs: [
+      'Conectividad confiable de alta velocidad',
+      'Cobertura WiFi de grado empresarial',
+      'Implementación de seguridad de red',
+      'Configuración de VLAN y QoS',
+      'Opciones de monitoreo de red 24/7',
+    ],
+    applications: ['Business Networks', 'WiFi Systems', 'Server Rooms', 'Cloud Connectivity', 'VoIP Systems'],
+    applicationsEs: ['Redes Empresariales', 'Sistemas WiFi', 'Salas de Servidores', 'Conectividad en la Nube', 'Sistemas VoIP'],
+    keywords: ['network installation', 'WiFi setup', 'network infrastructure', 'business networking', 'IT infrastructure'],
+  },
+];
+
+export function getCityBySlug(slug: string) {
+  return cities.find(c => c.slug === slug);
+}
+
+export function getServiceBySlug(slug: string) {
+  return services.find(s => s.slug === slug);
+}
+
+export function generateCityServiceContent(city: typeof cities[0], service: typeof services[0], lang: 'en' | 'es') {
+  const isEs = lang === 'es';
+  
+  return {
+    title: isEs 
+      ? `${service.nameEs} en ${city.nameEs}, Florida | IQES`
+      : `${service.name} in ${city.name}, Florida | IQES`,
+    metaDescription: isEs
+      ? `Servicios profesionales de ${service.shortNameEs} en ${city.nameEs}, FL. Instalación experta, servicio confiable. Sirviendo ${city.regionEs}. Llame hoy para cotización gratis.`
+      : `Professional ${service.shortName} services in ${city.name}, FL. Expert installation, reliable service. Serving ${city.region}. Call today for free quote.`,
+    h1: isEs
+      ? `${service.nameEs} en ${city.nameEs}, Florida`
+      : `${service.name} in ${city.name}, Florida`,
+    intro: isEs
+      ? `IQES ofrece servicios profesionales de ${service.shortNameEs.toLowerCase()} para negocios en ${city.nameEs} y ${city.regionEs}. Con técnicos certificados y años de experiencia, brindamos soluciones confiables para ${(city.keyIndustriesEs || []).slice(0, 3).join(', ').toLowerCase()} y más.`
+      : `IQES provides professional ${service.shortName.toLowerCase()} services for businesses in ${city.name} and throughout ${city.region}. With certified technicians and years of experience, we deliver reliable solutions for ${(city.keyIndustries || []).slice(0, 3).join(', ').toLowerCase()} and more.`,
+  };
+}

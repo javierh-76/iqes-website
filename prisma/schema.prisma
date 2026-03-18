@@ -1,0 +1,232 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String
+  role          String    @default("user")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  accounts      Account[]
+  sessions      Session[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model QuoteRequest {
+  id               String   @id @default(cuid())
+  serviceType      String[]
+  projectDetails   String
+  projectDetailsEs String?
+  firstName        String
+  lastName         String
+  email            String
+  phone            String
+  companyName      String?
+  serviceArea      String
+  budgetRange      String?
+  preferredContact String   @default("email")
+  attachments      String[]
+  status           String   @default("new")
+  notes            String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model ContactForm {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  phone       String?
+  subject     String
+  subjectEs   String?
+  message     String
+  messageEs   String?
+  serviceArea String?
+  status      String   @default("new")
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Project {
+  id                  String    @id @default(cuid())
+  title               String
+  titleEs             String?
+  description         String
+  descriptionEs       String?
+  serviceType         String
+  location            String
+  featured            Boolean   @default(false)
+  images              String[]
+  beforeImage         String?
+  afterImage          String?
+  completedDate       DateTime?
+  clientTestimonial   String?
+  clientTestimonialEs String?
+  clientName          String?
+  published           Boolean   @default(true)
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+}
+
+model BlogPost {
+  id                String    @id @default(cuid())
+  title             String
+  titleEs           String?
+  slug              String    @unique
+  slugEs            String?   @unique
+  excerpt           String
+  excerptEs         String?
+  content           String
+  contentEs         String?
+  category          String
+  categoryEs        String?
+  tags              String[]
+  featuredImage     String?
+  author            String    @default("Low Voltage Florida Team")
+  authorEs          String?
+  metaTitle         String?
+  metaTitleEs       String?
+  metaDescription   String?
+  metaDescriptionEs String?
+  published         Boolean   @default(false)
+  publishedAt       DateTime?
+  views             Int       @default(0)
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
+
+model Testimonial {
+  id          String   @id @default(cuid())
+  clientName  String
+  companyName String?
+  rating      Int      @default(5)
+  text        String
+  textEs      String?
+  serviceType String?
+  location    String?
+  featured    Boolean  @default(false)
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Quote {
+  id              String    @id @default(cuid())
+  token           String    @unique @default(cuid())
+  quoteNumber     String    @unique
+  clientName      String
+  clientEmail     String
+  clientPhone     String?
+  companyName     String?
+  services        String[]
+  description     String
+  descriptionEs   String?
+  lineItems       String
+  subtotal        Float
+  taxRate         Float     @default(0)
+  taxAmount       Float     @default(0)
+  depositPercent  Float     @default(50)
+  depositAmount   Float
+  totalAmount     Float
+  status          String    @default("draft")
+  sentAt          DateTime?
+  viewedAt        DateTime?
+  approvedAt      DateTime?
+  depositPaidAt   DateTime?
+  completedAt     DateTime?
+  expiresAt       DateTime?
+  stripeSessionId String?
+  stripePaymentId String?
+  paymentMethod   String?
+  quoteRequestId  String?
+  internalNotes   String?
+  clientNotes     String?
+  termsConditions String?
+  validDays       Int       @default(30)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model ServiceArea {
+  id            String   @id @default(cuid())
+  city          String   @unique
+  state         String   @default("Florida")
+  latitude      Float?
+  longitude     Float?
+  radius        Int      @default(150)
+  description   String?
+  descriptionEs String?
+  featured      Boolean  @default(false)
+  active        Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model PriceItem {
+  id            String   @id @default(cuid())
+  category      String
+  name          String
+  nameEs        String?
+  description   String?
+  descriptionEs String?
+  unit          String
+  unitLabel     String
+  unitLabelEs   String?
+  priceMin      Float
+  priceMax      Float
+  priceAvg      Float?
+  notes         String?
+  sortOrder     Int      @default(0)
+  isActive      Boolean  @default(true)
+  showInChat    Boolean  @default(true)
+  showInQuote   Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([category])
+  @@index([isActive])
+}
